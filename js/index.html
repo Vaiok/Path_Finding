@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="Shaun Bishop" />
+	<meta name="description" content="Small program for finding paths between points." />
+	<title>Path Finding</title>
+	<style>
+		body {
+			margin: 2vh;
+			overflow: hidden;
+			background-color: black;
+		}
+		#graphCnvs {
+			width: calc(100vw - 10vh);
+			height: 80vh;
+			background-color: white;
+			border: 3vh groove lightgray;
+		}
+		#helpTxt {
+			margin-top: 2vh;
+			position: absolute;
+			top: 0;
+			width: calc(100vw - 4vh);
+			height: 86vh;
+			background-color: white;
+		}
+		fieldset {background-color: lightgray;}
+		#radioLegend{
+			margin: 0;
+			text-align: center;
+		}
+		#bttnBar {
+			display: flex;
+			justify-content: space-around;
+		}
+		button {
+			width: 10vw;
+			height: 10vh;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="graphCnvs"></canvas>
+	<p id="helpTxt">
+		This is the help text with instructions for how to use this program.
+  		It can be toggled on and off with the 'Help' button.
+  		The 'Clear Graph' button will clear all nodes and edges, resetting the graph.
+		The 'Find Path' button searches for a path from the start to the goal.
+		If there is no node marked as start or goal, 'Find Path' will do nothing.
+		Under 'Canvas Click Mode' are 5 radio buttons.
+		These buttons change how clicking on the canvas affects it.
+		'Create Nodes' adds a blue node to the canvas if you click on it.
+		This node represents a location.
+		New nodes that would overlap existing nodes are not created.
+		'Create Edges' adds a red edge between two nodes if you click on them both.
+		This edge represents a path between 2 locations.
+		Nodes can't have edges to themselves or multiple edges with the same node.
+		'Delete Items' deletes nodes and edges if you click on them.
+		Deleting a node automatically deletes all edges connected to it.
+		'Select Start' marks a node as the start of a path.
+		'Select Goal' marks a node as the goal of a path.
+		No more than one start node and one goal node are allowed at a time.
+		All mouse clicks are with the main button(left), other buttons do nothing.
+	</p>
+	<div id="bttnBar">
+		<fieldset>
+			<h3 id="radioLegend">Canvas Click Mode</h3>
+			<input type="radio" id="createNodes" name="clickMode" value="nodes" checked />
+			<label for="createNodes">Create Nodes</label>
+			<input type="radio" id="createEdges" name="clickMode" value="edges" />
+			<label for="createEdges">Create Edges</label>
+			<input type="radio" id="deleteItems" name="clickMode" value="delete" />
+			<label for="deleteItems">Delete Items</label>
+			<input type="radio" id="selectStart" name="clickMode" value="start" />
+			<label for="selectStart">Select Start</label>
+			<input type="radio" id="selectGoal" name="clickMode" value="goal" />
+			<label for="selectGoal">Select Goal</label>
+		</fieldset>
+		<button id="clearGraph">Clear Graph</button>
+		<button id="findRoute">Find Route</button>
+		<button id="helpBttn">Help</button>
+	</div>
+	<script type="module" src="main.mjs"></script>
+</body>
+</html>
