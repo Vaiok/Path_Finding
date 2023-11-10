@@ -6,40 +6,8 @@
 	<meta name="author" content="Shaun Bishop" />
 	<meta name="description" content="Small program for finding paths between points." />
 	<title>Path Finding</title>
-	<style>
-		body {
-			margin: 2vh;
-			overflow: hidden;
-			background-color: black;
-		}
-		#graphCnvs {
-			width: calc(100vw - 10vh);
-			height: 80vh;
-			background-color: white;
-			border: 3vh groove lightgray;
-		}
-		#helpTxt {
-			margin-top: 2vh;
-			position: absolute;
-			top: 0;
-			width: calc(100vw - 4vh);
-			height: 86vh;
-			background-color: white;
-		}
-		fieldset {background-color: lightgray;}
-		#radioLegend{
-			margin: 0;
-			text-align: center;
-		}
-		#bttnBar {
-			display: flex;
-			justify-content: space-around;
-		}
-		button {
-			width: 10vw;
-			height: 10vh;
-		}
-	</style>
+	<link href="style.css" rel="stylesheet" />
+	<script type="module" src="main.mjs"></script>
 </head>
 <body>
 	<canvas id="graphCnvs"></canvas>
@@ -82,6 +50,5 @@
 		<button id="findRoute">Find Route</button>
 		<button id="helpBttn">Help</button>
 	</div>
-	<script type="module" src="main.mjs"></script>
 </body>
 </html>
